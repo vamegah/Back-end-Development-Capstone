@@ -36,13 +36,13 @@ def index(request):
 
 
 def songs(request):
-    songs_url = "http://songs-sn-labs-carcedojuan.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud"
+    songs_url = "http://songs-sn-labs-vamega13.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud"
     songs = req.get(f"{songs_url}/song").json()
-    return render(request, "songs.html", {"songs": songs})
+    return render(request, "songs.html", {"songs": songs["songs"]})
 
 
 def photos(request):
-    photos_url = "https://pictures.11iu4fdk72t2.us-south.codeengine.appdomain.cloud"
+    photos_url = "https://pictures.1qn97h08fmu2.us-south.codeengine.appdomain.cloud"
     photos = req.get(f"{photos_url}/picture").json()
     return render(request, "photos.html", {"photos": photos})
 
